@@ -1,0 +1,84 @@
+[
+	{
+		"title": "站外CR3000",
+		"icon": "fa-cubes",
+		"spread": true,
+		"children": [
+			{
+				"title": "通量",
+				"icon": "&#xe641;",
+				"href": "flux.html"
+			}, {
+				"title": "气象",
+				"icon": "&#xe63c;",
+				"href": "meteorology.html"
+			}, {
+				"title": "土壤",
+				"icon": "&#xe63c;",
+				"href": "soil.html"
+			}
+		]
+	}, {
+		"title": "玉米滴灌通量站",
+		"icon": "fa-cogs",
+		"spread": false,
+		"children": [
+			{
+				"title": "通量",
+				"icon": "fa-table",
+				"href": "flux.html"
+			}, {
+				"title": "气象",
+				"icon": "fa-navicon",
+				"href": "meteorology.html"
+			}
+		, {
+				"title": "土壤",
+				"icon": "fa-navicon",
+				"href": "soil.html"
+			}
+		]
+	}, {
+		"title": "玉米畦灌通量站",
+		"icon": "&#x1002;",
+		"spread": false,
+		"children": [
+			{
+				"title": "通量",
+				"icon": "fa-check-square-o",
+				"href": "flux.html"
+			},
+			{
+				"title": "气象",
+				"icon": "fa-check-square-o",
+				"href": "meteorology.html"
+			},
+			{
+				"title": "土壤",
+				"icon": "fa-check-square-o",
+				"href": "soil.html"
+			}
+		]
+	}, {
+		"title": "波文比",
+		"icon": "fa-address-book",
+		"href": "",
+		"spread": false,
+		"children": [
+			{
+				"title": "气象",
+				"icon": "fa-github",
+				"href": "meteorology.html"
+			}, {
+				"title": "土壤",
+				"icon": "fa-qq",
+				"href": "soil.html"
+			}
+		]
+	}, {
+		"title": "气象园",
+		"icon": "fa-stop-circle",
+		"href": "soil.html",
+		"spread": false
+	}
+]

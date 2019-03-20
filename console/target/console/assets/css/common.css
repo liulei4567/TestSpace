@@ -1,0 +1,34 @@
+.navi-title {
+    line-height: 38px;
+    font-size: 18px;
+}
+
+.fr {
+    float: right;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+/**
+ *layui表格表头居中
+ */
+th .layui-table-cell {
+    text-align:center;
+}
+.layui-table th {
+    text-align:center;
+}
+
+/**
+ *layui表格内容块换行
+ */
+/*td .layui-table-cell{*/
+    /*height: auto;*/
+    /*white-space: normal;*/
+    /*word-wrap: break-word;*/
+    /*word-break: break-all;*/
+/*}*/
+/*.layui-table-view .layui-table[lay-size="lg"] .layui-table-cell {*/
+    /*height: auto;*/
+/*}*/

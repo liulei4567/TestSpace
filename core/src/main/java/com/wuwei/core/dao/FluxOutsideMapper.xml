@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuwei.core.dao.FluxOutsideDao" >
+    <resultMap id="flux_outside_min_10" type="FluxOutsideMin10" >
+        <id column="TmStamp" property="tmStamp" />
+        <result column="RecNum" property="recNum" />
+        <result column="albedo_Avg" property="albedoAvg" />
+        <result column="R_SW_in_Avg" property="rSwInAvg" />
+        <result column="R_SW_out_Avg" property="rSwOutAvg" />
+    </resultMap>
+    <select id="getFlux" parameterType="Map"  resultMap="flux_outside_min_10">
+        SELECT  *  FROM flux_outside_min_10
+        limit #{pageStart} ,#{pageSize}
+    </select>
+
+    <select id="totalCount" resultType="Long">
+        SELECT  count(*)  FROM flux_outside_min_10
+    </select>
+
+</mapper>

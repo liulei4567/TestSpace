@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.1.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd"
+       default-lazy-init="true">
+    <!-- don't handle the static resource -->
+    <mvc:default-servlet-handler/>
+    <!-- if you use annotation you must configure following setting -->
+    <mvc:annotation-driven/>
+    <context:component-scan base-package="com.wuwei.console.controller" />
+    <context:component-scan base-package="com.wuwei.core.dao" />
+    <context:component-scan base-package="com.wuwei.console.service" />
+    <context:component-scan base-package="com.wuwei.core.entity" />
+    <context:annotation-config/>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <!-- task scan ?定时任务-->
+    <task:annotation-driven/>
+    <!-- 激活spring框架的mvc中注解法编程能力 -->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    <!-- 支持上传文件 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <context:component-scan base-package="com.wuwei.console" />
+    <!--不同的环境使用不同的数据库配置信息-->
+    <beans profile="dev">
+        <context:property-placeholder location="classpath:profile/dev/*.properties"/>
+    </beans>
+    <beans profile="online">
+        <context:property-placeholder location="classpath:profile/online/*.properties"/>
+    </beans>
+    <beans profile="test">
+        <context:property-placeholder location="classpath:profile/test/*.properties"/>
+    </beans>
+</beans>
